@@ -1,6 +1,10 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-    console.log('Turning ' + tab.url + ' red!');
-    chrome.tabs.executeScript({
-        code: 'document.body.style.backgroundColor="red"'
+// Enable extension if user is on the log on/off page in UltiPro
+chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+      chrome.declarativeContent.onPageChanged.addRules([{
+        conditions: [new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: {hostEquals: 'mei.ultiprotime.com'},
+        })
+        ],
+            actions: [new chrome.declarativeContent.ShowPageAction()]
+      }]);
     });
-});
