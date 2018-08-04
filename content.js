@@ -1,5 +1,5 @@
 console.log("Waiting for message...");
-console.log(document.getElementsByClassName("project-name").innerHTML);
+console.log(document.getElementById("content").value);
 
 // Listen for messages
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
