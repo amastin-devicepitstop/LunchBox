@@ -16,6 +16,7 @@ function showDOM(domContent){
 
 chrome.browserAction.onClicked.addListener(function (tab) {
   // ...if it matches, send a message specifying a callback too
+  console.log("This code has been reached");
   chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, showDOM);
     
 });
