@@ -5,7 +5,7 @@
   "permissions": ["declarativeContent", "activeTab", "storage"],
   "content_scripts": [ /*https://developer.chrome.com/extensions/content_scripts*/
     {
-      "matches": ["mei.ultiprotime.com"],
+      "matches": ["*://*cd3770rn.github.io/*"],
       "all_frames": true,
       "run_at": "document_idle",
       "js": ["content.js"]
