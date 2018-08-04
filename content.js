@@ -1,4 +1,7 @@
 console.log("Waiting for message...");
+console.log(document.getElementById("content"));
+console.log(document.getElementById("content").innerHTML);
+console.log(document.getElementById("content").innerText);
 console.log(document.getElementById("content").value);
 
 // Listen for messages
