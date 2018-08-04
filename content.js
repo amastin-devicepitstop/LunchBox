@@ -1,8 +1,5 @@
 console.log("Waiting for message...");
-console.log(document.getElementById("content"));
-console.log(document.getElementById("content").innerHTML);
-console.log(document.getElementById("content").innerText);
-console.log(document.getElementById("content").value);
+console.log(document.document.getElementsByTagName("button")[0]);
 
 // Listen for messages
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
