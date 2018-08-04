@@ -22,8 +22,10 @@ function getTime(){
     return currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + today.getSeconds() + " " + meridiem;
 }
 
+
 // Wait for window to load
 window.onload = function() {
+
     console.log("===== LUNCHBOX =====");
     console.log("Extension Loaded.");
 
@@ -37,18 +39,29 @@ window.onload = function() {
      * In order to choose a specific element, you have to specify it's index.
      * The code below sets the 'Clock On' and 'Clock Off' buttons to variables
      */
-
-    let clockOn = document.getElementsByTagName("button")[0];
-    let clockOff = document.getElementsByTagName("button")[1];
-
-    // Add an EventListener to listen for clicks on each of the buttons
-    clockOn.addEventListener('click', function() {
+    
+    if (document.getElementsByTagName("button").length == 2){
+        var clockOn = document.getElementsByTagName("button")[0];
+        var clockOff = document.getElementsByTagName("button")[1];
+    }     
+    
+    if (clockOn != null){
+        console.log("First button found");
+        // Add an EventListener to listen for clicks on each of the buttons
+        clockOn.addEventListener('click', function() {
         console.log("Clocked on at " + getTime());
     }, false);
 
-    clockOff.addEventListener('click', function() {
+    }
+    if (clockOff != null){
+        console.log("Second button found");
+        clockOff.addEventListener('click', function() {
         console.log("Clocked off at " + getTime());
     }, false);
+    }
+
+    
+    
 };
 
 /* Figure out some way to access the GitHub API
