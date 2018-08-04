@@ -9,3 +9,15 @@ chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
             actions: [new chrome.declarativeContent.ShowPageAction()]
       }]);
     });
+
+function showDOM(domContent){
+      console.log('I received the following DOM content:\n" + domContent);
+}
+
+chrome.browserAction.onClicked.addListener(function (tab) {
+  // ...if it matches, send a message specifying a callback too
+  chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, showDOM);
+    
+});
+
+
