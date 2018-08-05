@@ -28,28 +28,36 @@ window.onload = function() {
 
     console.log("===== LUNCHBOX =====");
     console.log("Extension Loaded.");
-
-
-    /*console.log("===== LUNCHBOX: USER =====");
-    var user = document.getElementsById("userName");
-    console.log(user);
-    console.log("====================");*/
-
-    /* getElementsByTagName returns an array of the specified elements.
-     * In order to choose a specific element, you have to specify it's index.
-     * The code below sets the 'Clock On' and 'Clock Off' buttons to variables
+    
+    
+    /* For some reason, UltiPro fires window.onload events numerous times.
+     * This JavaScript will be executed every time an event fires.
+     * The elements that we are looking for may not be loaded when the code is run,
+     * so the if-statements are necessary to grab and store the desired information.
      */
     
+    /* getElementsByTagName returns an array of the specified elements.
+     * In order to choose a specific element, you have to specify it's index.
+     */
+    
+    // The code below sets the user's name to a variable
     if (document.getElementById("loginUserName") != null){
-        console.log(document.getElementById("loginUserName"));
+        console.log("Found user's name.");
+        var username = document.getElementById("loginUserName").innerText;
     }
     
+    // The code below sets the 'Clock On' and 'Clock Off' buttons to variables    
     if (document.getElementsByTagName("button").length == 2){
         var clockOn = document.getElementsByTagName("button")[0];
         var clockOff = document.getElementsByTagName("button")[1];
         
     }     
     
+    /* If the buttons are found, it is printed to the console. 
+     * An event listener is added to the 'Clock On' and 'Clock Off' buttons.
+     * The event listener listens for clicks. When clicked, it records the
+     * time that the button was pressed. The information is then sent to this GitHub repository.
+     */
     if (clockOn != null){
         console.log("First button found");
         // Add an EventListener to listen for clicks on each of the buttons
@@ -60,9 +68,18 @@ window.onload = function() {
     }
     if (clockOff != null){
         console.log("Second button found");
+        console.log("====================");
         clockOff.addEventListener('click', function() {
         console.log("Clocked off at " + getTime());
     }, false);
+    }
+    
+    if (document.getElementsByClassName("today").length == 1){
+        var today = document.getElementsByClassName("today");
+        console.log(today);
+        console.log(today.innerText);
+        console.log(today.innerHTML);
+        console.log(today.value);
     }
 
     
