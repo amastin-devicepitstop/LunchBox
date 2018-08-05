@@ -40,9 +40,14 @@ window.onload = function() {
      * The code below sets the 'Clock On' and 'Clock Off' buttons to variables
      */
     
+    if (document.getElementById("loginUserName") != null){
+        console.log(document.getElementById("loginUserName"));
+    }
+    
     if (document.getElementsByTagName("button").length == 2){
         var clockOn = document.getElementsByTagName("button")[0];
         var clockOff = document.getElementsByTagName("button")[1];
+        
     }     
     
     if (clockOn != null){
