@@ -2,8 +2,7 @@
 chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([{
         conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostEquals: 'mei.ultiprotime.com'}, //mei.ultiprotime.com
-          //css: ["span[id='???']"]
+          pageUrl: {hostEquals: 'orderhistory.microcenter.com/Sales'},
         })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
