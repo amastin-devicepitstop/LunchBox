@@ -1,12 +1,11 @@
-Alexander Mastin (SLSASGS)
-
-Clocked out at 11:27:41 PM
-* * *
+# August 15, 2018
 
 #### User 1
 
 * * *
 
+#### Alexander Mastin (SLSASGS)
 
+* * *
 
 #### User 2
