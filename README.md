@@ -48,4 +48,62 @@ Clocked out at #:##:## AM/PM
 * * *
 ```
 
- 
+Any updates to `index.md` are queued in `append.md`, where they remain for 1 minute before being dumped to `index.md`. This way, if two users clock out within a short period of one another, the second user's information does not overwrite the first user's information before it has a chance to appear on the web page. 
+
+
+One user can clock out...
+```
+#### First User
+
+Clocked in at #:##:## AM/PM
+
+Clocked out at #:##:## AM/PM
+```
+
+And another can clock out shortly therafter...
+```
+#### Second User
+
+Clocked in at #:##:## AM/PM
+
+Clocked out at #:##:## AM/PM
+* * *
+
+#### First User
+
+Clocked in at #:##:## AM/PM
+
+Clocked out at #:##:## AM/PM
+```
+
+And the information is only appended to the top of the file, it does not overwrite the first user's information. Once a minute has passed, the data is pushed from `append.md` to `index.md`. Then, the contents of `append.md` are cleared to allow for new updates to be queued. Sending a command to wipe `append.md` takes only about a second, so there is a very small window where updates may not be received, but it is greatly improved compared to 30 seconds.
+
+Once `index.md` receives the update, it looks like this:
+```
+# Month Day, Year
+
+#### User 3
+
+Clocked in at #:##:## AM/PM
+
+Clocked out at #:##:## AM/PM
+* * *
+
+#### User 2
+
+Clocked in at #:##:## AM/PM
+
+Clocked out at #:##:## AM/PM
+* * *
+
+#### User 1
+Clocked in at #:##:## AM/PM
+
+Out to lunch at #:##:## AM/PM
+
+Back from lunch at #:##:## AM/PM
+```
+
+
+
+
