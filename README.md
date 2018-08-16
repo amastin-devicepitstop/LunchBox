@@ -32,7 +32,7 @@ The collected variables are all stored in an array variable with the following c
      
 * * *     
 
-With all user information collected and readily accessible, it is time to prepare `index.md` for new content. Whenever a new commit is pushed to `index.md`, Jekyll, the backend for GitHub Pages, is restarted. This means that any updates to `index.md` require about 20 to 30 seconds before they appear publicly. Since it is quite likely that two users may clock in or clock out during this period, it is necessary to queue the updates to `index.md`, and release them at regular intervals, as to avoid losing any information during the update period.
+With all user information collected and readily accessible, it is time to prepare `index.md` for new content. Whenever a new commit is pushed to `index.md`, Jekyll, the backend for GitHub Pages, is restarted. This means that any updates to `index.md` require about 20 to 30 seconds before they appear publicly. The problem is that the last set of data sent before the page updates is the one that will appear on the web page. Since it is quite likely that two users may clock in or clock out during this period, it is necessary to queue the updates to `index.md`, and release them at regular intervals, as to avoid losing any information during the update period.
 
 User information is formatted in markdown, which provides a basic way of styling the content. It appears as follows:
 ```
@@ -82,13 +82,6 @@ Once `index.md` receives the update, it looks like this:
 ```
 # Month Day, Year
 
-#### User 3
-
-Clocked in at #:##:## AM/PM
-
-Clocked out at #:##:## AM/PM
-* * *
-
 #### User 2
 
 Clocked in at #:##:## AM/PM
@@ -97,12 +90,13 @@ Clocked out at #:##:## AM/PM
 * * *
 
 #### User 1
+
 Clocked in at #:##:## AM/PM
 
-Out to lunch at #:##:## AM/PM
-
-Back from lunch at #:##:## AM/PM
+Clocked out at #:##:## AM/PM
 ```
+
+If a user clocks out before the last hour of their shift and then clocks back in, the punch information will change from `Clocked out at #:##:## AM/PM` to `Out to lunch at #:##:## AM/PM`. Similarly, `Clocked in at #:##:## AM/PM` will change to `Back from lunch at #:##:## AM/PM`.
 
 Finally, at the end of each day, `index.md` is cleared and restored to this format:
 ```
