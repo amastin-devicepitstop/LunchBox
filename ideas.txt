@@ -1,1 +1,0 @@
-Employee name, punch in, and punch out should be added into the body of default.html so that a server is not needed to interpret the information. So long as the files are all within the same repository, this should be completely possible. 
