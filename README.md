@@ -29,6 +29,8 @@ The collected variables are all stored in an array variable with the following c
      2. The start of the user's shift *(ex. '1p')*
      3. The end of the user's shift *(ex. '7p')*
      4. The department the user works in *(ex. 'SLSASGS')*
+     
+* * *     
 
 With all user information collected and readily accessible, it is time to prepare `index.md` for new content. Whenever a new commit is pushed to `index.md`, Jekyll, the backend for GitHub Pages, is restarted. This means that any updates to `index.md` require about 20 to 30 seconds before they appear publicly. Since it is quite likely that two users may clock in or clock out during this period, it is necessary to queue the updates to `index.md`, and release them at regular intervals, as to avoid losing any information during the update period.
 
