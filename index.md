@@ -1,2 +1,11 @@
 # August 15, 2018
-#### User1
+
+#### User 1
+
+* * *
+
+#### Alexander Mastin
+
+* * *
+
+#### User 2
