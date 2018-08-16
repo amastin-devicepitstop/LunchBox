@@ -3,9 +3,11 @@ LunchBox is a Chrome extension that collects information from UltiPro about when
 
 
 ## Functionality
-When the correct page in UltiPro is loaded, the extension locates the 'Clock On' and 'Clock Off' buttons.
-  
-As soon as the buttons are found, the extension confirms that they are the correct buttons. An Event Listener is then added to each button, which allows the extension to know when a button has been pressed. When a button press event occurs, the extension then gets the following information from UltiPro:
+This extension uses GitHub's API to display information on a GitHub Pages site.
+
+Once the Ultipro timeclock page loads, the extension collects the existing contents of `index.md`, which is the file used to display information on the GitHub Pages site. The contents are stored in a variable and used later when updating the page.
+
+Next, the extension locates the 'Clock On' and 'Clock Off' buttons. As soon as the buttons are found, the extension confirms that they are the correct buttons. An Event Listener is then added to each button, which allows the extension to know when a button has been pressed. When a button press event occurs, the extension then gets the following information from UltiPro:
 
   1. The current time
   2. The user's schedule for the current day
@@ -28,6 +30,20 @@ The collected variables are all stored in an array variable with the following c
      3. The end of the user's shift *(ex. '7p')*
      4. The department the user works in *(ex. 'SLSASGS')*
 
-  
-  
+With all user information collected and readily accessible, it is time to prepare `index.md` for new content. Whenever a new commit is pushed to `index.md`, Jekyll, the backend for GitHub Pages, is restarted. This means that any updates to `index.md` require about 20 to 30 seconds before they appear publicly. Since it is quite likely that two users may clock in or clock out during this period, it is necessary to queue the updates to `index.md`, and release them at regular intervals, as to avoid losing any information during the update period.
+
+User information is formatted in markdown, which provides a basic way of styling the content. It appears as follows:
+```
+#### Firstname Lastname
+
+Clocked in at #:##:## AM/PM
+
+Out to lunch at #:##:## AM/PM
+
+Back from lunch at #:##:## AM/PM
+
+Clocked out at #:##:## AM/PM
+* * *
+```
+
  
