@@ -60,7 +60,7 @@ Clocked in at #:##:## AM/PM
 Clocked out at #:##:## AM/PM
 ```
 
-And another can clock out shortly therafter...
+And another can clock out shortly thereafter...
 ```
 #### Second User
 
