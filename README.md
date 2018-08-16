@@ -76,7 +76,7 @@ Clocked in at #:##:## AM/PM
 Clocked out at #:##:## AM/PM
 ```
 
-And the information is only appended to the top of the file, it does not overwrite the first user's information. Once a minute has passed, the data is pushed from `append.md` to `index.md`. Then, the contents of `append.md` are cleared to allow for new updates to be queued. Sending a command to wipe `append.md` takes only about a second, so there is a very small window where updates may not be received, but it is greatly improved compared to 30 seconds.
+Once a minute has passed, the data is pushed from `append.md` to `index.md`. Then, the contents of `append.md` are cleared to allow for new updates to be queued. Sending a command to wipe `append.md` takes only about a second, so there is a very small window where updates may not be received, but it is greatly improved compared to 30 seconds.
 
 Once `index.md` receives the update, it looks like this:
 ```
@@ -104,6 +104,9 @@ Out to lunch at #:##:## AM/PM
 Back from lunch at #:##:## AM/PM
 ```
 
-
+Finally, at the end of each day, `index.md` is cleared and restored to this format:
+```
+# Month Day, Year
+```
 
 
