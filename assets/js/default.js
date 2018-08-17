@@ -1,8 +1,9 @@
 // Don't forget to change this to default.min.js when you're done here!
 
-const gh = new GitHub(/*{
-    token: '261df0553ce5e665bd40e664d75b4d5a807f75df'
-}*/);
+const gh = new GitHub({
+    client_id: '67cfcd62766fd764a23d'
+    client_secret: 'ac4203e692286bdb2cee77ed9a6105e14a212609'
+});
 
 const repo = gh.getRepo("amastin-microcenter", "LunchBox");
 
