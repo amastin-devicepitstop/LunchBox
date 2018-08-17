@@ -1,4 +1,5 @@
 function formatMonth(date){
+    console.log(date);
     switch (date) {
         case 0:
             return "January";
