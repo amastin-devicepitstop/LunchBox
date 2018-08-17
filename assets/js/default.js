@@ -1,6 +1,8 @@
-let header = document.getElementsByClassName("header-level-1");
-console.log(header);
-console.log(header[0]);
-console.log(header[0].innerText);
-console.log(header[0].innerHTML);
-console.log(header[0].textContent);
+//function formatHeader(){
+  let today = new Date();
+  let month = today.getMonth();
+  let day = today.getDay();
+  let year = today.getYear();
+  document.getElementsByTagName("h1")[0].innerHTML = month + " " + day + ", " + year;
+//}
+
