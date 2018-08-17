@@ -37,7 +37,7 @@ function formatHeader(){
     let day = today.getDay();
     let year = today.getYear();
     console.log(today.getYear());
-    document.getElementsByTagName("h1")[1].innerHTML = formatMonth(today.month) + " " + day + ", " + year;
+    document.getElementsByTagName("h1")[1].innerHTML = formatMonth(month) + " " + day + ", " + year;
 }
 
 window.onload = function(){
