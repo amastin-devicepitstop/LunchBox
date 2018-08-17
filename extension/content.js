@@ -1,5 +1,5 @@
 const gh = new GitHub({
-    token: '98eb3c3ffa896e696c72d26ed605a8164bd8c529'
+    token: '261df0553ce5e665bd40e664d75b4d5a807f75df'
 });
 
 const repo = gh.getRepo("amastin-microcenter", "LunchBox");
