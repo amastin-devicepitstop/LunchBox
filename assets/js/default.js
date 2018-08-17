@@ -3,7 +3,6 @@ function formatHeader(){
   let month = today.getMonth();
   let day = today.getDay();
   let year = today.getYear();
-  console.log(document.getElementsByTagName("h1"));
   document.getElementsByTagName("h1")[1].innerHTML = month + " " + day + ", " + year;
 }
 
