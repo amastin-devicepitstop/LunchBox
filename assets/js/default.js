@@ -1,6 +1,7 @@
 const gh = new GitHub({
     token: '67cfcd62766fd764a23d'
 });
+console.log("gh exists");
 
 const repo = gh.getRepo("amastin-microcenter", "LunchBox");
 
