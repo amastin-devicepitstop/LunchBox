@@ -1,3 +1,3 @@
 let header = document.getElementsByClassName("header-level-1");
-let headerContents = header[0].innerText;
+let headerContents = header[0];
 console.log(headerContents);
