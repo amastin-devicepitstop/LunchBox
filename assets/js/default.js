@@ -1,9 +1,6 @@
 // Don't forget to change this to default.min.js when you're done here!
 
-const gh = new GitHub({
-    client_id: '67cfcd62766fd764a23d'
-    client_secret: 'ac4203e692286bdb2cee77ed9a6105e14a212609'
-});
+let gh;
 
 const repo = gh.getRepo("amastin-microcenter", "LunchBox");
 
@@ -24,8 +21,22 @@ function formatHeader(){
     document.getElementsByTagName("h1")[1].innerHTML = new Date().toLocaleString(locale, options);
 }
 
+function authenticate(){
+    OAuth.initialize("67cfcd62766fd764a23d");
+    OAuth.popup('github')
+        .done(function(result) {
+            gh = new GitHub(result.access_token);
+        })
+        .fail(function (err) {
+            alert("An error occurred while authenticating the GitHub API. Please reload the page.")
+        });
+}
+
 window.onload = function(){
+    
+
     formatHeader();
+    authenticate();
     let updates = getPageContents(repo, "append.md")
     console.log(updates);
 }
