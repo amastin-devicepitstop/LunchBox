@@ -21,7 +21,7 @@ function formatHeader(){
 }
 
 function authenticate(){
-    OAuth.initialize("Iv1.b364a1c935b6a3a0");
+    OAuth.initialize("35214778a8ca6ba1bfe1");
     OAuth.popup('github')
         .done(function(result) {
             gh = new GitHub(result.access_token);
