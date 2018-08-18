@@ -1,8 +1,7 @@
 // Don't forget to change this to default.min.js when you're done here!
 
 let gh;
-
-const repo = gh.getRepo("amastin-microcenter", "LunchBox");
+let repo;
 
 function getPageContents(repo, file){
     let contents = repo.getContents("master", // branch in repository
@@ -26,6 +25,7 @@ function authenticate(){
     OAuth.popup('github')
         .done(function(result) {
             gh = new GitHub(result.access_token);
+            repo = gh.getRepo("amastin-microcenter", "LunchBox");
         })
         .fail(function (err) {
             alert("An error occurred while authenticating the GitHub API. Please reload the page.")
