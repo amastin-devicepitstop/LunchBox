@@ -28,7 +28,6 @@ function authenticate(){
             repo = gh.getRepo("amastin-microcenter", "LunchBox");
         })
         .fail(function (err) {
-            console.log(result.access_token);
             alert("An error occurred while authenticating the GitHub API. Please reload the page.")
         });
 }
